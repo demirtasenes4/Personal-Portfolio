@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #080808;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/ppbg3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+button:hover {
+    transform: scale(1.10);
+}
+
+.lang-tr{
+    background-image: url(images/tr.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-right: 0px;
+    width: 45px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.lang-en{
+    background-image: url(images/en.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-right: 0px;
+    width: 45px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    margin-top: 10px;
+    width: 120px;
+    cursor:none;
+    border-radius: 50%;
+}
+
+.logo:hover{
+    transform: scale(1.10);
+    box-shadow: 3px 3px 20px rgb(0, 0,0, .5);
+    transition: 1s;
+    
+}
+
+.logo:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: logo_puls 1s ease infinite;
+}
+
+.logo .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+.logo .bar::after,
+.logo .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+.logo ::after {
+	top: 8px;
+}
+.logo ::before {
+	bottom: 8px;
+}
+.logo::before {
+	bottom: 0;
+}
+.logo::after {
+	top: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 60%;
+    height: 3px;
+    background: rgb(50, 70, 200);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+	transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    content: '';
+	display: flex;
+    width: 100%;
+    height: 3px;
+    background: rgb(50, 70, 200);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+/* Adjust the underline width for "Home" and "About" links when hovered */
+nav ul li a:hover:hover::after {
+    width: 100%; /* New width when hovered (adjust as needed) */
+    transition: 0.5s;
+}
+
+#hero {
+    margin-top: 20px;
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+}
+#hero::after {
+
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0;
+	z-index: -1;
+}
+#hero .hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+
+.reveal-text {
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+	color: #fff;
+	position: relative;
+	transform: translateY(20px);
+	transition: opacity 2s ease, transfrom 0.5s ease;
+	opacity: 0;
+}
+
+.reveal {
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: 0.5s;
+}
+
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+}
+
+#hero h2 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+	font-weight: 500;
+}
+
+#hero h1:nth-child(1) {
+	animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+	animation-delay: 2s;
+}
+#hero h2:nth-child(3) {
+	animation: text_reveal_name 0.5s ease forwards;
+	animation-delay: 3.0s;
+}
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: rgb(20, 40, 220);
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+}
+#hero h2 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: rgb(20, 40, 220);
+	animation: text_reveal_box 1s ease;
+	animation-delay: 2.5s;
+}
+
+#hero h1:nth-child(1) span {
+	animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+#hero h1:nth-child(3) {
+	
+	animation-delay: 3s;
+}
+
+@keyframes logo_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: rgb(175, 194, 207);
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: rgb(50, 70, 200);
+		font-weight: 500;
+	}
+}
+
+/* -----------------------About---------------------- */
+
+#about{
+	padding: 80px 0;
+	color: white
+}
+
+.row{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.about-col-1{
+	flex-basis: 35%;
+}
+
+.about-col-1 img{
+	width: 100%;
+	border-radius: 5px;
+}
+
+.about-col-2{
+	flex-basis: 60%;
+}
+
+.sub-title{
+	font-size: 60px;
+	font-weight: 600;
+	color: rgb(50, 70, 200);
+}
+
+.tab-titles{
+	display: flex;
+	margin: 20px 0 40px;
+}
+
+.tab-links{
+	margin-right: 50px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+
+.tab-links::after{
+	content: '';
+	width: 0;
+	height: 3px;
+	background: #ff004f;
+	position: absolute;
+	left: 0;
+	bottom: -8px;
+	transition: 0.5s;
+}
