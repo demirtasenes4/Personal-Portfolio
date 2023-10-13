@@ -42,13 +42,90 @@
                     <img src="images/pp2.jpg">
                 </div>
                 <div class="about-col-2">
-                    <h1>Hakkımda</h1>
+                    <h1 class="sub-title">Hakkımda</h1>
+                    <p>Mekatronik mühendisi olarak, bilgisayar bilimleri, robotik ve yapay zeka konularına güçlü bir ilgim var. Aynı zamanda mekanik tasarım ve üretim becerilerim de mevcut.<br>
+                        Kişisel olarak, öğrencilik hayatım boyunca IT ve programlamayla uğraşıyordum ve kariyerimde de bu yolda ilerlemeye kararlıyım.<br>
+                        Kişilik açısından, herhangi bir ortama uyum sağlama yeteneğim yüksek ve dirençli bir yapım var. Bununla birlikte, hızlı öğrenme kabiliyetim, sorun çözme yeteneğim ve analitik düşünme yeteneğim yüksektir.
+                        
+                        Kişisel gelişimi en çok sevenlerden biriyim ve bu ifade etrafında bir yaşam tarzı yaratma isteğim var. Yeni beceriler öğrenmeyi gerektiren ve mevcut yetenekleri sınırlarına kadar zorlayan bir işte çalışmayı çok istiyorum, hatta daha önce hiç çalışmadığım tamamen farklı alanlarda bile.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Yetenekler</p>
+                        <p class="tab-links" onclick="opentab('experience')">Tecrübeler</p>
+                        <p class="tab-links" onclick="opentab('education')">Eğitim</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>.NET Core</span><br>Backend Development Framework</li>
+                            <li><span>Web Development</span><br>Web API Development tools</li>
+                            <li><span>SQL</span><br>Data management systems</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020</span><br>BIT Electronics<br>Automation Systems Trainee</li>
+                            <li><span>2021-2023</span><br>Viking Life-Saving Equipment<br>Demand Planning</li>
+                            <li><span>2023</span><br>İstanbul Eğitim Akademi<br>Junior Full Stack Developer</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents"
+                    id="education">
+                        <ul>
+                            <li><span>2010-2014</span><br>TEB Ataşehir Anatholian High School<br>Mathematics</li>
+                            <li><span>2014-2020</span><br>İstanbul Gedik University<br>BD at Mechatronic Engineering</li>
+                            <li><span>2023</span><br>İstanbul Eğitim Akademi<br>Full Stack Software Development Training</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <!-- -----------services-------------- -->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Hizmetlerim</h1>
+            <div class="services-list">
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://kit.fontawesome.com/43ce813bff.js" crossorigin="anonymous"></script>
+
+    <script>
+        
+        const languageSwitch = document.getElementById('language-switch');
+        
+        languageSwitch.addEventListener('click', function () {
+            const currentPage = window.location.pathname;
+            const targetPage = currentPage.includes('indextr.html') ? 'index.html' : 'indextr.html';
+            window.location.href = targetPage;
+        });
+        
+        setTimeout(function () {
+            const text = document.querySelector('.reveal-text');
+            text.classList.add('reveal');
+        }, 2000);
+    
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents")
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+    
+    </script>
+
 </body>
 </html>

@@ -61,7 +61,7 @@
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>.Net Core</span><br>Backend Development Framework</li>
+                            <li><span>.NET Core</span><br>Backend Development Framework</li>
                             <li><span>Web Development</span><br>Web API Development tools</li>
                             <li><span>SQL</span><br>Data management systems</li>
                         </ul>
@@ -86,7 +86,98 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <!-- -----------services-------------- -->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>.NET Core Development</h2>
+                    <p>Backend development with ASP.NET framework.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <h2>Data Management</h2>
+                    <p>SQL Database management systems and analysis tools.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Web Development</h2>
+                    <p>Web API development tools.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----------portfolio------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/backend.jpeg">
+                    <div class="layer">
+                        <h3>Online Book Store App</h3>
+                        <p>The app where users shop via online marketting platform.</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/database.jpeg">
+                    <div class="layer">
+                        <h3>School Database Project</h3>
+                        <p>A database scheme that allows teacher to keep the attendance sheet on the table.</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/webapi.jpeg">
+                    <div class="layer">
+                        <h3>Online CV-Editor</h3>
+                        <p>An online CV-Editting tool that can be used as a template to create CV and download it as PDF.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
     <script src="https://kit.fontawesome.com/43ce813bff.js" crossorigin="anonymous"></script>
+
+    <script>
+        
+        const languageSwitch = document.getElementById('language-switch');
+        
+        languageSwitch.addEventListener('click', function () {
+            const currentPage = window.location.pathname;
+            const targetPage = currentPage.includes('indextr.html') ? 'index.html' : 'indextr.html';
+            window.location.href = targetPage;
+        });
+        
+        setTimeout(function () {
+            const text = document.querySelector('.reveal-text');
+            text.classList.add('reveal');
+        }, 2000);
+    
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents")
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+    
+    </script>
+
 </body>
 </html>
