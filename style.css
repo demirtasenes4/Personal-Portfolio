@@ -406,6 +406,7 @@ nav ul li a:hover:hover::after {
 	font-size: 12px;
 	margin-top: 20px;
 	display: inline-block;
+	color: aqua;
 }
 
 .services-list div:hover{
