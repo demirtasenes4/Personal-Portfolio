@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contant="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- ------------------CSS------------------------ -->
+    <style>
+body {
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    top: 0;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: space-between;
+}
+.content {
+    padding: 40px;
+    margin: 60px;
+}
+nav h1{
+    font-size: 40px;
+    color: rgb(50, 80, 200);
+}
+.menu-button {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+}
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.burger-menu:hover {
+    background-color: rgba(255, 255, 255, 0.164);
+}
+.bar {
+    width: 25px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+.menu-list {
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    margin-top: 110px;
+    left: -500px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    transition: 0.5s;
+}
+@media (max-width: 486px) {
+    .menu-list.active {
+        width: 90%;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+.menu-list::-webkit-scrollbar{
+  width: 12px;
+  background-color: black;
+}
+.menu-list::-webkit-scrollbar-thumb {
+  background: rgba(22, 79, 204, 0.438);
+  border-radius: 6px;
+}
+.menu-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 100, 209, 0.596);
+  cursor: pointer;
+}
+.menu-list.active {
+    left: 0;
+}
+.menu-list li {
+    padding: 10px;
+    left:10px;
+    right: 10px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.menu-list li::after{
+    content: '';
+	width: 60%;
+	height: 3px;
+    left: 20%;
+	background: rgb(50, 70, 200);
+    position: absolute;
+	bottom: 0px;
+}
+.tab-titles{
+    margin: 15px;
+    color: azure;
+    cursor: pointer;
+}
+.tab-titles p{
+    padding: 8px;
+    min-height: 25px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.tab-titles p:hover{
+    background-color: rgb(50, 80, 200);
+    transform: translateX(10px);
+}
+.tab-contents li{
+    color: #fff;
+}
+.tab-links{
+	margin-right: 50px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+.tab-links.active-link{
+    background-color: rgb(50, 80, 200);
+    transform: translateX(10px);
+}
+.tab-contents ul{
+	color:  rgb(255, 255, 255);
+	font-weight: 600;
+	font-size: 15px;
+}
+.tab-contents ul p{
+    line-height: 1.6;
+}
+.tab-contents ul h1{
+    color: rgb(50, 80, 200);
+}
+.tab-contents{
+	display: none;
+}
+.tab-contents.active-tab{
+	display: block;
+}
+    </style>
+    <title>My Blogs</title>
+</head>
+<body>
+    <nav>
+        <div class="menu-button">
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <h1>My Blogs</h1>
+        <h1></h1>
+        <ul class="menu-list">
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('article1')">Jaccard Similarity</p>
+                <p class="tab-links" onclick="opentab('article2')">ORM in .NET</p>
+                <p class="tab-links" onclick="opentab('article3')">Entity Framework in .NET</p>
+            </div>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="tab-contents active-tab" id="article1">
+            <ul>
+                <h1>The Power of Jaccard Similarity</h1>
+                <p>When it comes to measuring similarity between two sets, the Jaccard Similarity is a powerful and widely used metric in various fields, including data analysis, information retrieval, and recommendation systems. Named after the French mathematician Paul Jaccard, this metric offers a simple yet effective way to determine the similarity between two sets.</p>
+    
+                <h2>Understanding Jaccard Similarity</h2>
+    
+                <p>Jaccard Similarity is particularly valuable when dealing with categorical data or when comparing the similarity of items in two sets. It is defined as the size of the intersection of the sets divided by the size of their union. In mathematical terms:</p>
+    
+                <p><strong>J(A, B) = |A ∩ B| / |A ∪ B|</strong></p>
+                
+                <p>Where:</p>
+                <ul>
+                    <li><strong>A</strong> is the first set</li>
+                    <li><strong>B</strong> is the second set</li>
+                    <li><strong>|A ∩ B|</strong> represents the size of the intersection of sets A and B</li>
+                    <li><strong>|A ∪ B|</strong> represents the size of the union of sets A and B</li>
+                </ul>
+                
+                <h2>Real-World Applications</h2>
+                
+                <p>The Jaccard Similarity metric finds applications in various domains:</p>
+                
+                <h3>Data Analysis</h3>
+                <p>In data analysis, Jaccard Similarity is used to compare customer preferences, identify product associations, or determine the similarity between documents based on word sets.</p>
+                
+                <h3>Information Retrieval</h3>
+                <p>Information retrieval systems use Jaccard Similarity to find documents that are most relevant to a given query. It helps rank search results based on keyword matching.</p>
+                
+                <h3>Recommendation Systems</h3>
+                <p>Jaccard Similarity is a fundamental tool in recommendation systems. It measures the similarity between users' preferences and is used to recommend products or content based on what similar users have liked.</p>
+                
+                <h2>Calculating Jaccard Similarity</h2>
+                
+                <p>Calculating Jaccard Similarity involves finding the intersection and union of two sets. Once you have these values, you can easily compute the similarity using the formula mentioned earlier. It's a straightforward yet powerful tool for making data-driven decisions.</p>
+                
+                <h2>Conclusion</h2>
+                
+                <p>Jaccard Similarity is a versatile metric that offers insight into the similarity of sets. Its simplicity and effectiveness have made it a valuable tool in fields like data analysis, information retrieval, and recommendation systems. Understanding and utilizing Jaccard Similarity can help you make more informed decisions and provide better services to your users.</p>
+                
+                <p>So, next time you need to measure the similarity between two sets, remember the power of Jaccard Similarity and how it can help you in various aspects of data analysis and information retrieval.</p>
+            </ul>
+        </div>
+        <div class="tab-contents" id="article2">
+            <ul>
+                <h1>Demystifying ORM in .NET</h1>
+
+                <p>Object-Relational Mapping, or ORM, is a crucial concept in the world of software development, especially when it comes to working with databases. In the .NET ecosystem, ORM tools play a pivotal role in simplifying data access and transforming database records into object-oriented code. Let's demystify ORM in .NET and explore its significance in modern application development.</p>
+            
+                <h2>What is ORM?</h2>
+            
+                <p>ORM is a programming technique that bridges the gap between object-oriented programming and relational databases. It allows developers to work with data in a more intuitive, object-oriented way, abstracting away the complexities of SQL queries and database interactions. ORM tools provide a set of classes and methods to represent database tables and their relationships, enabling you to manipulate data using programming languages like C#.</p>
+            
+                <h2>Why Use ORM in .NET?</h2>
+            
+                <p>ORM is a game-changer in .NET development for several reasons:</p>
+            
+                <h3>Productivity</h3>
+                <p>ORM tools automate many routine database operations, reducing the amount of repetitive code developers need to write. This improves productivity and allows developers to focus on building application features rather than managing data access.</p>
+            
+                <h3>Maintainability</h3>
+                <p>ORM tools simplify database schema changes. Instead of updating SQL queries throughout your codebase, you can make adjustments in a single place, often in your ORM's configuration or data model. This greatly enhances code maintainability.</p>
+            
+                <h3>Portability</h3>
+                <p>ORM abstracts database-specific SQL dialects. This means you can switch between different database management systems (e.g., SQL Server, MySQL, PostgreSQL) without rewriting your entire data access layer. This portability is a significant advantage for applications that need to support multiple databases.</p>
+            
+                <h3>Performance</h3>
+                <p>Modern ORM tools are highly optimized and can generate efficient SQL queries. While there's a perception that ORM can lead to performance issues, well-designed and tuned ORM-based applications can often match or even outperform hand-written SQL in terms of database interactions.</p>
+            
+                <h2>Popular ORM Frameworks in .NET</h2>
+            
+                <p>There are several ORM frameworks available for .NET, including Entity Framework, NHibernate, Dapper, and more. Entity Framework, a Microsoft product, is widely used and is a part of the .NET ecosystem. It provides a feature-rich ORM solution with excellent tooling support.</p>
+            
+                <h2>Getting Started with ORM</h2>
+            
+                <p>If you're new to ORM in .NET, it's a good idea to start with Entity Framework, given its strong integration with Visual Studio and extensive documentation. You can create a data model, configure your database connection, and start working with data in a matter of minutes.</p>
+            
+                <h2>Conclusion</h2>
+            
+                <p>ORM in .NET is a powerful technology that simplifies data access and database management, enhancing developer productivity and code maintainability. While it might have a learning curve, the benefits of using ORM are undeniable. If you haven't explored ORM in your .NET projects, it's time to give it a try and experience the convenience and efficiency it brings to your application development.</p>
+            
+                <p>By understanding ORM's principles and embracing the capabilities of ORM frameworks like Entity Framework, you'll be better equipped to create robust, efficient, and maintainable applications in the .NET ecosystem.</p>
+            </ul>
+        </div>
+        <div class="tab-contents" id="article3">
+            <ul>
+                <h1>Exploring Entity Framework in .NET</h1>
+                
+                <p>Entity Framework (EF) is a powerful Object-Relational Mapping (ORM) tool for .NET developers. It simplifies database interactions, making it easier to work with data in your applications. In this article, we'll explore what Entity Framework is, its key features, and how to make the most of this technology in your .NET projects.</p>
+            
+                <h2>Understanding Entity Framework</h2>
+            
+                <p>Entity Framework is an ORM framework developed by Microsoft as part of the .NET ecosystem. Its primary purpose is to bridge the gap between the object-oriented world of application code and the relational world of databases. It allows you to interact with your database using .NET objects, eliminating the need to write complex SQL queries.</p>
+            
+                <h2>Key Features of Entity Framework</h2>
+            
+                <p>Entity Framework offers a wide range of features that make it a valuable tool for .NET developers:</p>
+            
+                <h3>Code-First and Database-First Approaches</h3>
+                <p>EF supports both the code-first and database-first approaches. In code-first, you define your data model in C# classes, and EF generates the database schema. In database-first, EF generates the C# data model from an existing database schema. This flexibility suits various project scenarios.</p>
+            
+                <h3>LINQ Support</h3>
+                <p>Entity Framework seamlessly integrates with Language-Integrated Query (LINQ), allowing you to write expressive and type-safe queries in your preferred .NET language, such as C# or VB.NET.</p>
+            
+                <h3>Migrations</h3>
+                <p>EF includes a migration system that helps manage database schema changes over time. It simplifies the process of updating your database when your data model evolves.</p>
+            
+                <h3>Query Optimization</h3>
+                <p>Entity Framework generates optimized SQL queries, which can lead to better database performance. It also supports lazy loading and eager loading to control when related data is retrieved from the database.</p>
+            
+                <h3>Visual Studio Integration</h3>
+                <p>If you're using Visual Studio, Entity Framework offers excellent tooling support. You can create data models, perform migrations, and access the database directly from the IDE.</p>
+            
+                <h2>Getting Started with Entity Framework</h2>
+            
+                <p>Here's a simplified overview of how to get started with Entity Framework:</p>
+            
+                <ol>
+                    <li>Install Entity Framework via NuGet in your project.</li>
+                    <li>Create a data model by defining C# classes that represent your database tables.</li>
+                    <li>Configure your database connection in your application's configuration file.</li>
+                    <li>Use LINQ queries to interact with your data model and the underlying database.</li>
+                </ol>
+            
+                <h2>Conclusion</h2>
+            
+                <p>Entity Framework is a versatile and feature-rich ORM tool for .NET developers. It simplifies data access, improves code maintainability, and offers efficient query optimization. By mastering Entity Framework, you can streamline database interactions and focus on building robust and feature-rich applications.</p>
+            
+                <p>If you're not already using Entity Framework in your .NET projects, now is an excellent time to explore its capabilities. It can help you build more efficient, maintainable, and scalable applications in the .NET ecosystem.</p>
+            </ul>
+        </div>
+    </div>
+
+   <!-- ------------------------------Script----------------------  -->
+    <script src="https://kit.fontawesome.com/43ce813bff.js" crossorigin="anonymous"></script>
+    <script>
+        
+        const burgerMenu = document.querySelector('.burger-menu');
+        const menuButton = document.querySelector('.menu-button');
+        const menuList = document.querySelector('.menu-list');
+        
+        menuButton.addEventListener('click', () => {
+            menuList.classList.toggle('active');
+        });
+
+        // Listen for clicks outside of the menu list
+        // document.addEventListener('click', (event) => {
+        //     if (event.target !== menuButton && event.target !== menuList) {
+        //         menuList.style.display = 'none';
+        //     }
+        // });
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents")
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
