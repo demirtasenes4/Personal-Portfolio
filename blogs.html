@@ -30,6 +30,24 @@ nav h1{
     font-size: 40px;
     color: rgb(50, 80, 200);
 }
+#page-switch{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    padding: 10px;
+    margin-right: 50px;
+}
+#page-switch i{
+    font-size: 30px;
+    border-radius: 100%;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+}
+#page-switch i:hover{
+    background-color: rgba(255, 255, 255, 0.164);
+}
 .menu-button {
     display: flex;
     align-items: center;
@@ -170,7 +188,7 @@ nav h1{
             </div>
         </div>
         <h1>My Blogs</h1>
-        <h1></h1>
+        <div id="page-switch"><i class="fa-solid fa-house" href="index.html"></i></div>
         <ul class="menu-list">
             <div class="tab-titles">
                 <p class="tab-links active-link" onclick="opentab('article1')">Jaccard Similarity</p>
@@ -316,34 +334,41 @@ nav h1{
    <!-- ------------------------------Script----------------------  -->
     <script src="https://kit.fontawesome.com/43ce813bff.js" crossorigin="anonymous"></script>
     <script>
+    const pageSwitch = document.getElementById('page-switch');
         
-        const burgerMenu = document.querySelector('.burger-menu');
-        const menuButton = document.querySelector('.menu-button');
-        const menuList = document.querySelector('.menu-list');
+    pageSwitch.addEventListener('click', function () {
+    const currentPage = window.location.pathname;
+    const targetPage = currentPage.includes('blogs.html') ? 'index.html' : 'blogs.html';
+    window.location.href = targetPage;
+    });  
         
-        menuButton.addEventListener('click', () => {
-            menuList.classList.toggle('active');
-        });
+    const burgerMenu = document.querySelector('.burger-menu');
+    const menuButton = document.querySelector('.menu-button');
+    const menuList = document.querySelector('.menu-list');
+    
+    menuButton.addEventListener('click', () => {
+        menuList.classList.toggle('active');
+    });
 
-        // Listen for clicks outside of the menu list
-        // document.addEventListener('click', (event) => {
-        //     if (event.target !== menuButton && event.target !== menuList) {
-        //         menuList.style.display = 'none';
-        //     }
-        // });
+    // Listen for clicks outside of the menu list
+    // document.addEventListener('click', (event) => {
+    //     if (event.target !== menuButton && event.target !== menuList) {
+    //         menuList.style.display = 'none';
+    //     }
+    // });
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents")
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents")
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
         }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
     </script>
 </body>

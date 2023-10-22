@@ -32,7 +32,6 @@ button:hover {
     height: 30px;
     cursor: pointer;
 }
-
 .lang-en{
     background-image: url(images/en.png);
     background-size: cover;
@@ -47,69 +46,27 @@ button:hover {
 .container{
     padding: 10px 10%;
 }
-
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
+#logo,
 .logo{
     margin-top: 10px;
     width: 120px;
     cursor:none;
     border-radius: 50%;
+	transition: 0.5s;
 }
 
 .logo:hover{
     transform: scale(1.10);
-    box-shadow: 3px 3px 20px rgb(0, 0,0, .5);
-    transition: 1s;
+    box-shadow: 3px 3px 20px rgba(255, 255, 255, 0.397);
+    transition: 0.5s;
     
 }
-
-.logo:after {
-	position: absolute;
-	content: '';
-	height: 100%;
-	width: 100%;
-	border-radius: 50%;
-	border: 3px solid white;
-	animation: logo_puls 1s ease infinite;
-}
-
-.logo .bar {
-	height: 2px;
-	width: 30px;
-	position: relative;
-	background-color: white;
-	z-index: -1;
-}
-.logo .bar::after,
-.logo .bar::before {
-	content: '';
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	background-color: white;
-	transition: 0.3s ease;
-	transition-property: top, bottom;
-}
-.logo ::after {
-	top: 8px;
-}
-.logo ::before {
-	bottom: 8px;
-}
-.logo::before {
-	bottom: 0;
-}
-.logo::after {
-	top: 0;
-}
-
 nav ul li{
     display: inline-block;
     list-style: none;
@@ -144,13 +101,10 @@ nav ul li a:hover::after {
     left: 0;
     bottom: -6px;
 }
-
-/* Adjust the underline width for "Home" and "About" links when hovered */
 nav ul li a:hover:hover::after {
-    width: 100%; /* New width when hovered (adjust as needed) */
+    width: 100%;
     transition: 0.5s;
 }
-
 #hero {
     margin-top: 20px;
 	background-size: cover;
@@ -259,6 +213,30 @@ nav ul li a:hover:hover::after {
 	
 	animation-delay: 3s;
 }
+#download-cv{
+	margin-top: 50px;
+}
+#backToTopBtn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #007BFF;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	font-size: 24px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	display: none;
+	transition: 0.5s;
+  }
+  #backToTopBtn:hover{
+	background-color: #007bffa1;
+  }
+  .hidden {
+	display: none;
+  }
 
 @keyframes logo_puls {
 	0% {
@@ -313,7 +291,7 @@ nav ul li a:hover:hover::after {
 .about-col-1 img{
 	margin-top: 50px;
 	width: 100%;
-	border-radius: 5px;
+	border-radius: 20px;
 }
 
 .about-col-2{

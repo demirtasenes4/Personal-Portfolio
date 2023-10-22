@@ -12,12 +12,15 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logov2.png" class="logo">
+                <a id="logo" href="#about" data-after="about">
+                    <img src="images/logov2.png" class="logo">
+                </a>
                 <ul>
-                    <li><a href="#home" data-after="home">Home</a></li>
+                    <li><a href="#home" data-after="home" onclick="refreshPage()">Home</a></li>
                     <li><a href="#about" data-after="about">About</a></li>
-                    <li><a href="#projects" data-after="projects">Projects</a></li>
+                    <li><a href="#services" data-after="projects">My Services</a></li>
                     <li><a href="#portfolio" data-after="portfolio">Portfolio</a></li>
+                    <li><a href="blogs.html" data-after="blogs">Blogs</a></li>
                     <li><a href="#contact" data-after="contact">Contact</a></li>
 
                     <button href="indextr.html" id="language-switch" class="lang-tr"></button>
@@ -79,6 +82,10 @@
                             <li><span>2014-2020</span><br>İstanbul Gedik University<br>BD at Mechatronic Engineering</li>
                             <li><span>2023</span><br>İstanbul Eğitim Akademi<br>Full Stack Software Development Training</li>
                         </ul>
+                    </div>
+                    <div id="download-cv">
+                        <a href="Enes Demirtaş - CV.pdf" download="Enes Demirtaş - CV.pdf">Download My CV</a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -143,40 +150,11 @@
             <a href="#" class="btn">See more</a>
         </div>
     </div>
-
+    <button id="backToTopBtn" class="hidden" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
     <script src="https://kit.fontawesome.com/43ce813bff.js" crossorigin="anonymous"></script>
-
-    <script>
-        
-        const languageSwitch = document.getElementById('language-switch');
-        
-        languageSwitch.addEventListener('click', function () {
-            const currentPage = window.location.pathname;
-            const targetPage = currentPage.includes('indextr.html') ? 'index.html' : 'indextr.html';
-            window.location.href = targetPage;
-        });
-        
-        setTimeout(function () {
-            const text = document.querySelector('.reveal-text');
-            text.classList.add('reveal');
-        }, 2000);
-    
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents")
-
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    
-    
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
