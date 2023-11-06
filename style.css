@@ -230,14 +230,14 @@ nav ul li a:hover:hover::after {
 	cursor: pointer;
 	display: none;
 	transition: 0.5s;
-  }
-  #backToTopBtn:hover{
-	background-color: #007bffa1;
-  }
-  .hidden {
-	display: none;
-  }
-
+}
+#backToTopBtn:hover{
+  background-color: #007bffa1;
+}
+.hidden {
+  display: none;
+}
+	
 @keyframes logo_puls {
 	0% {
 		opacity: 1;
