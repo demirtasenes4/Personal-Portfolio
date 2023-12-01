@@ -480,6 +480,7 @@ nav ul li a:hover:hover::after {
 }
 .contact-left p{
 	margin-top: 2em;
+	text-wrap: nowrap;
 }
 .contact-left p i{
 	color: aqua;
@@ -534,4 +535,9 @@ nav ul li a:hover:hover::after {
 .contact-right form button:hover{
 	background-color: rgb(80, 100, 255);
 	cursor: pointer;
+}
+@media (max-width: 1440px) {
+	#contact img{
+		display: none;
+	}
 }
