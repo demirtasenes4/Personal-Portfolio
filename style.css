@@ -525,8 +525,13 @@ nav ul li a:hover:hover::after {
 	margin-top: 10px;
 	border-radius: 10px;
 	background: rgb(60, 60, 60);
+	color: white;
 	padding: 6px;
 	width: 100%;
+}
+.contact-right form input::placeholder,
+.contact-right form textarea::placeholder{
+	color: rgba(255, 255, 255, 0.8);
 }
 .contact-right form textarea::-webkit-scrollbar{
 	display: block;
@@ -553,6 +558,15 @@ nav ul li a:hover:hover::after {
 		display: none;
 	}
 }
+@media (max-width:960px){
+	#contact .container .row{
+		margin-top: 2em;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		text-align: center;
+	}
+}
 body::-webkit-scrollbar{
 	width: 12px;
 	background-color: black;
@@ -564,4 +578,12 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-thumb:hover {
 	background: rgba(17, 100, 209, 0.596);
 	cursor: pointer;
+}
+.copyright{
+	width: 100%;
+	text-align: center;
+	padding: 25px;
+	background-color: #262626;
+	font-weight: 300;
+	margin-top: 10px;
 }
