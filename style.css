@@ -17,7 +17,7 @@ body{
     background-size:cover;
     background-position: center;
 }
-button:hover {
+#header button:hover {
     transform: scale(1.10);
 }
 
@@ -368,6 +368,7 @@ nav ul li a:hover:hover::after {
 	font-weight: 300;
 	border-radius: 10px;
 	transition: background 0.5s, transform 0.5s;
+	transition: 1s;
 }
 .services-list div i{
 	font-size: 40px;
@@ -388,7 +389,9 @@ nav ul li a:hover:hover::after {
 
 .services-list div:hover{
 	background:  rgb(50, 70, 200);
-	transform: translate3d(10px, -10px, 0);
+	box-shadow: -7px 7px 0px 0px #9c9c9c;
+	transform: translate3d(7px, -7px, 0);
+	transition: 0.5s;
 }
 
 /* --------------portfolio-------------------- */
@@ -518,10 +521,15 @@ nav ul li a:hover:hover::after {
 }
 .contact-right form input,
 .contact-right form textarea{
+	overflow: hidden;
 	margin-top: 10px;
 	border-radius: 10px;
+	background: rgb(60, 60, 60);
 	padding: 6px;
 	width: 100%;
+}
+.contact-right form textarea::-webkit-scrollbar{
+	display: block;
 }
 .contact-right form button{
 	margin-top: 20px;
@@ -530,14 +538,30 @@ nav ul li a:hover:hover::after {
 	width: 40%;
 	background-color: #3a49d5;
 	color: white;
+	box-shadow: -2px 2px 0px 0px #9c9c9c;
 	transition: 0.5s;
 }
 .contact-right form button:hover{
 	background-color: rgb(80, 100, 255);
+	transform: translate3d(-2px, 2px, 0px);
+	box-shadow: 0px 0px 0px 0px #9c9c9c;
 	cursor: pointer;
+	transition: 0.5s;
 }
 @media (max-width: 1440px) {
 	#contact img{
 		display: none;
 	}
+}
+body::-webkit-scrollbar{
+	width: 12px;
+	background-color: black;
+}
+body::-webkit-scrollbar-thumb{
+	background: rgba(22, 79, 204, 0.438);
+	border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb:hover {
+	background: rgba(17, 100, 209, 0.596);
+	cursor: pointer;
 }
