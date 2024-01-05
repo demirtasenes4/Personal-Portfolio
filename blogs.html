@@ -96,15 +96,18 @@ nav h1{
         background-color: rgba(0, 0, 0, 0.7);
     }
 }
-body::-webkit-scrollbar{
+body::-webkit-scrollbar,
+.menu-list.active::-webkit-scrollbar{
   width: 12px;
   background-color: black;
 }
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.menu-list.active::-webkit-scrollbar-thumb{
   background: rgba(22, 79, 204, 0.438);
   border-radius: 6px;
 }
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover,
+.menu-list.active::-webkit-scrollbar-thumb:hover{
   background: rgba(17, 100, 209, 0.596);
   cursor: pointer;
 }
